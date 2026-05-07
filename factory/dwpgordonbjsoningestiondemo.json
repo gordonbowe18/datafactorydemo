@@ -1,0 +1,15 @@
+{
+	"name": "dwpgordonbjsoningestiondemo",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ab01472d-7432-4fdd-8eb8-8ad73257ea1f",
+		"tenantId": "ef2e0d1c-6ddb-40c0-8d54-9c3ce68ca6b2"
+	}
+}
