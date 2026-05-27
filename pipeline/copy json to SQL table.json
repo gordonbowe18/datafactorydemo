@@ -19,7 +19,7 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "dwpcontainerdemo",
+							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
