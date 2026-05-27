@@ -7,6 +7,80 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
+		"structure": [
+			{
+				"name": "eventName",
+				"type": "String"
+			},
+			{
+				"name": "eventId",
+				"type": "String"
+			},
+			{
+				"name": "eventTimestamp",
+				"type": "DateTime"
+			},
+			{
+				"name": "session_id",
+				"type": "String"
+			},
+			{
+				"name": "user_agent",
+				"type": "String"
+			},
+			{
+				"name": "app_category",
+				"type": "String"
+			},
+			{
+				"name": "page_name",
+				"type": "String"
+			},
+			{
+				"name": "page_url",
+				"type": "String"
+			},
+			{
+				"name": "previous_page_name",
+				"type": "String"
+			},
+			{
+				"name": "navigation_type",
+				"type": "String"
+			},
+			{
+				"name": "referrer_url",
+				"type": "String"
+			},
+			{
+				"name": "destination_url",
+				"type": "String"
+			},
+			{
+				"name": "link_text",
+				"type": "String"
+			},
+			{
+				"name": "link_type",
+				"type": "String"
+			},
+			{
+				"name": "element_id",
+				"type": "String"
+			},
+			{
+				"name": "field_name",
+				"type": "String"
+			},
+			{
+				"name": "selected_value",
+				"type": "String"
+			},
+			{
+				"name": "selected_type",
+				"type": "String"
+			}
+		],
 		"typeProperties": {
 			"tableName": "[dbo].[landing]"
 		}
