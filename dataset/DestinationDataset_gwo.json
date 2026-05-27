@@ -8,7 +8,7 @@
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"typeProperties": {
-			"tableName": "[dbo].[RawJson]"
+			"tableName": "[dbo].[landing]"
 		}
 	}
 }
