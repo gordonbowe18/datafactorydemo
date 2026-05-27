@@ -16,14 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "BinarySource",
+						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFileName": "*.json"
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
-							"type": "BinaryReadSettings"
+							"type": "JsonReadSettings"
 						}
 					},
 					"sink": {
@@ -36,7 +37,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "JSONstorageattempt2",
+						"referenceName": "SourceDataset_gwo",
 						"type": "DatasetReference"
 					}
 				],
