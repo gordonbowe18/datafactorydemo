@@ -88,6 +88,9 @@
 							{
 								"source": {
 									"path": "$['value']['body']['app_version']"
+								},
+								"sink": {
+									"name": "app_version"
 								}
 							},
 							{
@@ -181,6 +184,9 @@
 							{
 								"source": {
 									"path": "$['value']['body']['payload']['selection_type']"
+								},
+								"sink": {
+									"name": "selected_type"
 								}
 							}
 						]
