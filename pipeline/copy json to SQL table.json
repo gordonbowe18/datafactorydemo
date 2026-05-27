@@ -19,9 +19,7 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFolderPath": "*.json",
-							"wildcardFileName": "*.json",
+							"fileListPath": "dwpcontainerdemo",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
