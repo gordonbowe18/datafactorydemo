@@ -79,6 +79,10 @@
 			{
 				"name": "selected_type",
 				"type": "String"
+			},
+			{
+				"name": "app_version",
+				"type": "String"
 			}
 		],
 		"typeProperties": {
