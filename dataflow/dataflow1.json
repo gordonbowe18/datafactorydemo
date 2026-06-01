@@ -1,0 +1,28 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "SourceDataset_gwo",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          value as (header as (eventName as string, eventId as string, eventTimestamp as string), body as (session_id as string, user_agent as string, app_category as string, app_version as string, payload as (page_name as string, page_url as string, previous_page_name as string, navigation_type as string, referrer_url as string, destination_url as string, link_text as string, link_type as string, element_id as string, field_name as string, selected_value as string, selection_type as string)))",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine') ~> source1"
+			]
+		}
+	}
+}
