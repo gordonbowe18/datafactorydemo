@@ -1,0 +1,211 @@
+{
+	"name": "copy json to SQL table",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['value']['header']['eventName']"
+								},
+								"sink": {
+									"name": "eventName"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['header']['eventId']"
+								},
+								"sink": {
+									"name": "eventId"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['header']['eventTimestamp']"
+								},
+								"sink": {
+									"name": "eventTimestamp"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['session_id']"
+								},
+								"sink": {
+									"name": "session_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['user_agent']"
+								},
+								"sink": {
+									"name": "user_agent"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['app_category']"
+								},
+								"sink": {
+									"name": "app_category"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['app_version']"
+								},
+								"sink": {
+									"name": "app_version"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['page_name']"
+								},
+								"sink": {
+									"name": "page_name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['page_url']"
+								},
+								"sink": {
+									"name": "page_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['previous_page_name']"
+								},
+								"sink": {
+									"name": "previous_page_name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['navigation_type']"
+								},
+								"sink": {
+									"name": "navigation_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['referrer_url']"
+								},
+								"sink": {
+									"name": "referrer_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['destination_url']"
+								},
+								"sink": {
+									"name": "destination_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['link_text']"
+								},
+								"sink": {
+									"name": "link_text"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['link_type']"
+								},
+								"sink": {
+									"name": "link_type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['element_id']"
+								},
+								"sink": {
+									"name": "element_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['field_name']"
+								},
+								"sink": {
+									"name": "field_name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['selected_value']"
+								},
+								"sink": {
+									"name": "selected_value"
+								}
+							},
+							{
+								"source": {
+									"path": "$['value']['body']['payload']['selection_type']"
+								},
+								"sink": {
+									"name": "selected_type"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_gwo",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_gwo",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

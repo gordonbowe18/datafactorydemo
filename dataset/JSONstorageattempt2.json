@@ -1,0 +1,17 @@
+{
+	"name": "JSONstorageattempt2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "JSON storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "dwpcontainerdemo"
+			}
+		}
+	}
+}

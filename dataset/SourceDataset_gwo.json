@@ -1,0 +1,99 @@
+{
+	"name": "SourceDataset_gwo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "JSON storage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "dwpcontainerdemo"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "object",
+					"properties": {
+						"header": {
+							"type": "object",
+							"properties": {
+								"eventName": {
+									"type": "string"
+								},
+								"eventId": {
+									"type": "string"
+								},
+								"eventTimestamp": {
+									"type": "string"
+								}
+							}
+						},
+						"body": {
+							"type": "object",
+							"properties": {
+								"session_id": {
+									"type": "string"
+								},
+								"user_agent": {
+									"type": "string"
+								},
+								"app_category": {
+									"type": "string"
+								},
+								"app_version": {
+									"type": "string"
+								},
+								"payload": {
+									"type": "object",
+									"properties": {
+										"page_name": {
+											"type": "string"
+										},
+										"page_url": {
+											"type": "string"
+										},
+										"previous_page_name": {
+											"type": "string"
+										},
+										"navigation_type": {
+											"type": "string"
+										},
+										"referrer_url": {
+											"type": "string"
+										},
+										"destination_url": {
+											"type": "string"
+										},
+										"link_text": {
+											"type": "string"
+										},
+										"link_type": {
+											"type": "string"
+										},
+										"element_id": {
+											"type": "string"
+										},
+										"field_name": {
+											"type": "string"
+										},
+										"selected_value": {
+											"type": "string"
+										},
+										"selection_type": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
